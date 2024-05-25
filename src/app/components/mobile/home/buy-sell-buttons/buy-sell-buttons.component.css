@@ -1,0 +1,15 @@
+.buy,
+.sell {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #fff !important;
+    width: 100%;
+}
+
+.buy {
+    background-color: #12B886;
+}
+
+.sell {
+    background-color: #FA5252;
+}

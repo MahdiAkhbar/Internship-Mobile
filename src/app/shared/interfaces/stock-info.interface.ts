@@ -1,0 +1,20 @@
+export interface IStock {
+    insCode: string;
+    symbol: string;
+    companyName: string;
+    symbolEn: string;
+    companyNameEn: string;
+    maxAllowedPrice: number;
+    minAllowedPrice: number;
+    baseVolume: number;
+    flow: number;
+    valid: number;
+    symbolType: number;
+    symbolAsset: number;
+    finalTradePrice: number;
+    firstPrice: number;
+    closePrice: number;
+    tradesCount: number;
+    tradesVolume: number;
+    tradesValue: number;
+};

@@ -1,0 +1,48 @@
+<div class="container-c flex flex-column">
+  <!-- HEADER -->
+  <div class="flex">
+    <div class="header header-right flex">
+      <div class="header-item header-count">تعداد</div>
+      <div class="header-item header-volume">حجم</div>
+      <div class="header-item header-price">قیمت</div>
+    </div>
+    <div class="header header-left flex">
+      <div class="header-item header-price">قیمت</div>
+      <div class="header-item header-volume">حجم</div>
+      <div class="header-item header-count">تعداد</div>
+    </div>
+  </div>
+  <!-- BODY -->
+  <div class="flex flex-gap-4">
+    <div class="body body-right flex flex-column">
+      @for (item of mazanneh; track item) {
+      <div class="body-item flex">
+        <div
+          class="background-bar background-bar-right"
+          [style.width.%]="getSupplyBackgroundWidth(item.supplyVolume)"
+        ></div>
+        <p class="body-item-text body-item-count">{{ item.numberOfSupply }}</p>
+        <p class="body-item-text body-item-volume-right">
+          {{ item.supplyVolume }}
+        </p>
+        <p class="body-item-text body-item-price">{{ item.supplyPrice }}</p>
+      </div>
+      }
+    </div>
+    <div class="body body-left flex flex-column">
+      @for (item of mazanneh; track item) {
+      <div class="body-item flex">
+        <div
+          class="background-bar background-bar-left"
+          [style.width.%]="getDemandBackgroundWidth(item.demandVolume)"
+        ></div>
+        <p class="body-item-text body-item-price">{{ item.demandPrice }}</p>
+        <p class="body-item-text body-item-volume-left">
+          {{ item.demandVolume }}
+        </p>
+        <p class="body-item-text body-item-count">{{ item.numberOfDemand }}</p>
+      </div>
+      }
+    </div>
+  </div>
+</div>

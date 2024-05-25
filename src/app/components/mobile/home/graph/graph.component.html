@@ -1,0 +1,38 @@
+<div class="container-c shadow-1">
+  <div class="header flex justify-between flex-gap-4">
+    <!-- Graph Type -->
+    <mat-form-field>
+      <mat-label>نوع نمودار</mat-label>
+      <mat-select [(value)]="sellectedGraphType">
+        @for (item of graphType; track item) {
+        <mat-option [value]="item.value">{{ item.viewValue }}</mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+    <!-- Graph Duration -->
+    <mat-form-field>
+      <mat-label>بازه</mat-label>
+      <mat-select [(value)]="sellectedGraphDuration">
+        @for (item of graphDuration; track item) {
+        <mat-option [value]="item.value">{{ item.viewValue }}</mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+    <!-- Graph Timeframe -->
+    <mat-form-field>
+      <mat-label>تایم فریم</mat-label>
+      <mat-select [(value)]="sellectedGraphTimeframe">
+        @for (item of graphTimeframe; track item) {
+        <mat-option [value]="item.value">{{ item.viewValue }}</mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="graph">
+    <apx-chart
+      [series]="chartOptions.series"
+      [chart]="chartOptions.chart"
+      [xaxis]="chartOptions.xaxis"
+    ></apx-chart>
+  </div>
+</div>

@@ -1,0 +1,165 @@
+<div class="login flex flex-column justify-center p-5 align-center">
+  <div class="logo">internship</div>
+  <div class="title flex">
+    <div class="icons"></div>
+    <div>
+      <p class="title-text">ورود به حساب کاربری</p>
+    </div>
+  </div>
+  <div *ngIf="isLoading" class="spinner-container">
+    <app-loading-spinner></app-loading-spinner>
+  </div>
+  <div class="error-msg alert alert-danger" *ngIf="errorMessage">
+    <p>{{ errorMessage }}</p>
+  </div>
+  <form class="form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div class="form-inputs">
+      <div class="form-input-item">
+        <label class="input-label mb-2" for="username">نام کاربری</label>
+        <input
+          id="username"
+          type="text"
+          class="input"
+          name="username"
+          placeholder="لطفا نام کاربری خود را وارد کنید"
+          formControlName="username"
+          [ngClass]="{
+            'is-invalid':
+              !loginForm.controls['username'].valid &&
+              loginForm.controls['username'].touched
+          }"
+        />
+        <!-- <span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="#fff"
+            class="icons"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M7.5 6a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM3.751 20.105a8.25 8.25 0 0 1 16.498 0 .75.75 0 0 1-.437.695A18.683 18.683 0 0 1 12 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 0 1-.437-.695Z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </span> -->
+        <p
+          class="is-invalid-text"
+          *ngIf="
+            !loginForm.controls['username'].valid &&
+            loginForm.controls['username'].touched
+          "
+        >
+          لطفا نام کاربری خود را وارد کنید!
+        </p>
+      </div>
+      <div class="form-input-item">
+        <label class="input-label mb-2" for="password">رمز ورود</label>
+        <input
+          id="password"
+          autocomplete="new-password"
+          type="password"
+          class="input"
+          name="password"
+          placeholder="لطفا رمز ورود خود را وارد کنید"
+          formControlName="password"
+          [ngClass]="{
+            'is-invalid':
+              !loginForm.controls['password'].valid &&
+              loginForm.controls['password'].touched
+          }"
+        />
+        <!-- <span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="#fff"
+            class="icons"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M15.75 1.5a6.75 6.75 0 0 0-6.651 7.906c.067.39-.032.717-.221.906l-6.5 6.499a3 3 0 0 0-.878 2.121v2.818c0 .414.336.75.75.75H6a.75.75 0 0 0 .75-.75v-1.5h1.5A.75.75 0 0 0 9 19.5V18h1.5a.75.75 0 0 0 .53-.22l2.658-2.658c.19-.189.517-.288.906-.22A6.75 6.75 0 1 0 15.75 1.5Zm0 3a.75.75 0 0 0 0 1.5A2.25 2.25 0 0 1 18 8.25a.75.75 0 0 0 1.5 0 3.75 3.75 0 0 0-3.75-3.75Z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </span> -->
+        <p
+          class="is-invalid-text"
+          *ngIf="
+            !loginForm.controls['password'].valid &&
+            loginForm.controls['password'].touched
+          "
+        >
+          لطفا رمز خود را وارد کنید!
+        </p>
+      </div>
+      <!-- <div
+        class="form-input-item"
+        [ngClass]="{
+          'is-invalid':
+            !loginForm.controls['captcha'].valid &&
+            loginForm.controls['captcha'].touched
+        }"
+      >
+        <label class="input-label mb-2" for="captcha">کد امنیتی</label>
+        <div class="flex flex-gap-8">
+          <div class="flex input flex-gap-4">
+            <input
+              id="captcha"
+              autocomplete="new-password"
+              type="text"
+              class="input input-captcha"
+              name="captcha"
+              formControlName="captcha"
+            />
+            <button class="captcha-reload-btn">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="icons"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99"
+                />
+              </svg>
+            </button>
+          </div>
+          <img
+            src="https://imgs.search.brave.com/Pjt8p_7WqsOyMmWexPW1Hw9HmRfhhUyt8RtjkfypjY8/rs:fit:500:0:0/g:ce/aHR0cHM6Ly93d3cu/bmRyLmRlL3NlcnZp/Y2UvdGVjaG5pc2No/ZV9oaWxmZS9jYXB0/Y2hhMTA1X3YtY29u/dGVudGdyb3NzLmpw/Zw"
+            alt="captcha"
+            class="captcha-image"
+          />
+        </div> -->
+      <!-- <span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="#fff"
+            class="icons"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M15.75 1.5a6.75 6.75 0 0 0-6.651 7.906c.067.39-.032.717-.221.906l-6.5 6.499a3 3 0 0 0-.878 2.121v2.818c0 .414.336.75.75.75H6a.75.75 0 0 0 .75-.75v-1.5h1.5A.75.75 0 0 0 9 19.5V18h1.5a.75.75 0 0 0 .53-.22l2.658-2.658c.19-.189.517-.288.906-.22A6.75 6.75 0 1 0 15.75 1.5Zm0 3a.75.75 0 0 0 0 1.5A2.25 2.25 0 0 1 18 8.25a.75.75 0 0 0 1.5 0 3.75 3.75 0 0 0-3.75-3.75Z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </span> -->
+      <!-- </div> -->
+    </div>
+    <button type="submit" class="submit-btn" [disabled]="!loginForm.valid">
+      ورود
+    </button>
+  </form>
+  <div class="alert alert-success w-100" *ngIf="successLoginMsg">
+    <p class="text-center">{{ successLoginMsg }}</p>
+  </div>
+  <div class="flex align-center flex-gap-4">
+    <p>حساب کاربری ندارید؟</p>
+    <a (click)="goToSignup()" class="signup-text">ثبت نام کنید</a>
+  </div>
+</div>

@@ -1,0 +1,120 @@
+<div class="container-c flex flex-column">
+  <!-- SearchBox -->
+  <div class="flex search-box mb-12">
+    <div class="flex align-center search-input-box shadow-1">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="icons"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+        />
+      </svg>
+      <input
+        type="text"
+        class="search-input"
+        placeholder="جستجوی نماد"
+        #search
+      />
+      <div
+        class="container-c search-result"
+        *ngIf="searchResultList && searchResultListVisiblity && isFocus"
+      >
+        <div
+          class="search-result-item flex justify-between"
+          *ngFor="let item of searchResultList"
+          (click)="onSelectSearchItem(item)"
+        >
+          <p class="symbol">{{ item.symbol }}</p>
+          <p class="company-name">{{ item.companyName }}</p>
+        </div>
+      </div>
+    </div>
+    <button
+      class="btn icon-watch flex justify-center align-center"
+      (click)="onAddToWatchList()"
+      matTooltip="اضافه کردن به دیده‌بان"
+      matTooltipHideDelay="2000"
+      oncontextmenu="return false;"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="icons icon-stroke-white"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z"
+        />
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+        />
+      </svg>
+    </button>
+  </div>
+  <!-- Last Exchange -->
+  <div class="flex align-center justify-between shadow-1 p-8 mb-12">
+    <div class="w-50">
+      <p class="text">{{ selectedStock.companyName }}</p>
+    </div>
+    <div class="w-50 flex justify-between">
+      <p>آخرین معامله</p>
+      <p class="price">{{ selectedStock.finalTradePrice }}</p>
+    </div>
+  </div>
+  <!-- Info Box -->
+  <div class="grid grid-2 info-box">
+    <div class="flex justify-between info-items bg-gray">
+      <p>حجم معاملات</p>
+      <p>{{ selectedStock.tradesVolume }}</p>
+    </div>
+    <div class="flex justify-between info-items bg-gray">
+      <p>قیمت پایانی</p>
+      <p>{{ selectedStock.closePrice }}</p>
+    </div>
+    <div class="flex justify-between info-items">
+      <p>تعداد معاملات</p>
+      <p>{{ selectedStock.tradesCount }}</p>
+    </div>
+    <div class="flex justify-between info-items">
+      <p>قیمت دیروز</p>
+      <p>{{ selectedStock.firstPrice }}</p>
+    </div>
+    <div class="flex justify-between info-items bg-gray">
+      <p>ارزش معاملات</p>
+      <p>{{ selectedStock.tradesValue }}</p>
+    </div>
+    <div class="flex justify-between info-items bg-gray">
+      <p>بازه فردا</p>
+      <p>{{ selectedStock.minAllowedPrice - selectedStock.maxAllowedPrice }}</p>
+    </div>
+    <div class="flex justify-between info-items">
+      <p>حجم مبنا</p>
+      <p>{{ selectedStock.baseVolume }}</p>
+    </div>
+    <div class="flex justify-between info-items">
+      <p>بازه هفته</p>
+      <p>ناموجود</p>
+    </div>
+    <div class="flex justify-between info-items bg-gray">
+      <p>نوع بازار</p>
+      <p>ناموجود</p>
+    </div>
+    <div class="flex justify-between info-items bg-gray">
+      <p>بازه تعداد</p>
+      <p>ناموجود</p>
+    </div>
+  </div>
+</div>

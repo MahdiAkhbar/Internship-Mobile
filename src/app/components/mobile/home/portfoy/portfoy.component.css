@@ -1,0 +1,78 @@
+.portfoy {
+    height: 30rem;
+    background-color: #e9ecef;
+    overflow: auto;
+}
+
+table {
+    font-size: 1.4rem;
+    width: 100%;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 40px;
+    border-collapse: collapse;
+}
+
+.table-head {
+    background-color: #E9ECEF;
+    font-size: 1.2rem;
+    font-weight: normal;
+    border-bottom: 2px solid #ADB5BD;
+}
+
+.table-head-item-text {
+    padding: .8rem 0;
+    text-align: center;
+}
+
+td {
+    padding: 1.2rem 0;
+}
+
+.table-body .table-data-row:nth-child(even) {
+    background-color: #F1F3F5;
+}
+
+.table-body .table-data-row:nth-child(odd) {
+    background-color: #fff;
+}
+
+.light-text {
+    color: #777;
+}
+
+.green-box {
+    width: 1rem;
+    height: 1rem;
+    background-color: #38D9A9;
+    margin-right: 1rem;
+}
+
+.change-lastPrice-green {
+    color: #099268;
+}
+
+.change-lastPrice-red {
+    color: #C92A2A;
+}
+
+.change-finishPrice {
+    display: inline-block;
+    text-align: center;
+    padding: .4rem .8rem;
+    border-radius: 1rem;
+    min-width: 35.55px;
+}
+
+.change-bg-green {
+    background-color: #20C997;
+    color: #fff;
+}
+
+.change-bg-red {
+    background-color: #FF6B6B;
+    color: #fff;
+}
+
+p {
+    direction: ltr;
+}

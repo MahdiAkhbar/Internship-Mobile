@@ -1,0 +1,83 @@
+.table-data-row {
+    height: 4rem;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.table-data-row:hover {
+    background-color: #e0e5e8;
+}
+
+.bg-gray {
+    background-color: #F1F3F5;
+}
+
+.table-data {
+    align-content: center;
+    text-align: center;
+}
+
+.green-box {
+    width: 1rem;
+    height: 1rem;
+    background-color: #38D9A9;
+    margin-right: 1rem;
+}
+
+.change-finishPrice {
+    font-size: 1.2rem;
+    font-weight: 500;
+    display: inline-block;
+    width: 3.2rem;
+    height: 2.4rem;
+    text-align: center;
+    border-radius: 1rem;
+    align-content: center;
+    background-color: transparent;
+}
+
+.change-bg-green {
+    background-color: #20C997;
+    color: #fff;
+}
+
+.change-bg-red {
+    background-color: #FF6B6B;
+    color: #fff;
+}
+
+.remove-watchlist {
+    background-color: #e0e5e8;
+    display: none;
+}
+
+.remove-watchlist-button {
+    background-color: #FF6B6B;
+    width: 25px;
+    height: 100%;
+    text-align: center;
+    align-content: center;
+}
+
+.remove-watchlist-icon {
+    width: 15px;
+    height: 15px;
+
+}
+
+.volume-text {
+    text-align: end;
+}
+
+.table-data-row:hover {
+    .volume-text {
+        display: none;
+    }
+
+    .remove-watchlist {
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        padding-left: 8px;
+    }
+}

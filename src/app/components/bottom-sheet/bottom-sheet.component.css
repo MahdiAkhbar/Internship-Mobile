@@ -1,0 +1,126 @@
+.bottom-sheet {
+    background-color: #1E2026;
+    padding: 1.2rem;
+}
+
+::ng-deep .mat-bottom-sheet-container {
+    padding: 0;
+}
+
+.btn-c {
+    font-size: 1.8rem;
+    font-weight: 600;
+    width: 100%;
+    border-radius: 0.8rem;
+    border: none;
+    padding: .8rem 0;
+    transition: all 300ms;
+    background-color: transparent;
+}
+
+.btn-buy-fill {
+    background-color: #12B886;
+    color: #fff;
+}
+
+.btn-buy-out {
+    background-color: #fff;
+    color: #087F5B;
+}
+
+.btn-buy-out .btn-buy:focus {
+    background-color: #20c997;
+}
+
+.btn-sell-fill {
+    background-color: #C92A2A;
+    color: #fff;
+}
+
+.btn-sell-out {
+    background-color: #fff;
+    color: #C92A2A;
+}
+
+.form-inputs {
+    color: #ADB5BD;
+}
+
+.inc-dec {
+    width: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+}
+
+.inc,
+.dec {
+    width: 100%;
+    height: 50%;
+    padding: 0 8px;
+    border: 1px solid #ADB5BD;
+    text-align: center;
+    align-content: center;
+}
+
+.inc {
+    border-top-right-radius: 6px;
+}
+
+.dec {
+    border-bottom-right-radius: 6px;
+}
+
+.inc-dec-icon {
+    width: 1rem;
+    height: 1rem;
+}
+
+.input-box {
+    width: 100%;
+    border: 1px solid #ADB5BD;
+    padding: .8rem;
+    display: flex;
+    align-items: center;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+
+.total-price-box {
+    height: 4.6rem;
+}
+
+.input-total-price {
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+.input {
+    height: 100%;
+    color: #fff;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    direction: ltr;
+    padding: 0;
+}
+
+.input:focus {
+    outline: none;
+}
+
+label {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.btn-cancle {
+    border: 1px solid #ADB5BD;
+    color: #ADB5BD;
+    font-weight: normal;
+    font-size: 1.6rem;
+}

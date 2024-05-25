@@ -1,0 +1,18 @@
+.header {
+    background-color: #5F3DC4;
+    padding: 1.2rem .8rem;
+}
+
+span,
+p {
+    font-size: 1.6rem;
+    color: #fff;
+}
+
+button {
+    min-width: fit-content;
+}
+
+.logo {
+    font-size: 2rem;
+}

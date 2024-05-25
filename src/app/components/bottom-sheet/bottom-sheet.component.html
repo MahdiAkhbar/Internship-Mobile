@@ -1,0 +1,148 @@
+<div class="flex flex-column flex-gap-12 justify-center bottom-sheet">
+  <div class="buttons flex flex-gap-4">
+    <button
+      class="btn-c"
+      (click)="formType('buy')"
+      [ngClass]="{
+        'btn-buy-fill': orderType === 'buy',
+        'btn-buy-out': orderType === 'sell'
+      }"
+    >
+      خرید
+    </button>
+    <button
+      class="btn-c"
+      (click)="formType('sell')"
+      [ngClass]="{
+        'btn-sell-fill': orderType === 'sell',
+        'btn-sell-out': orderType === 'buy'
+      }"
+    >
+      فروش
+    </button>
+  </div>
+  <form>
+    <div class="form-inputs flex flex-column flex-gap-12 mb-4">
+      <div class="flex flex-gap-4 form-inputs-item">
+        <div class="inc-dec">
+          <div class="inc">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              class="inc-dec-icon"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M12 3.75a.75.75 0 0 1 .75.75v6.75h6.75a.75.75 0 0 1 0 1.5h-6.75v6.75a.75.75 0 0 1-1.5 0v-6.75H4.5a.75.75 0 0 1 0-1.5h6.75V4.5a.75.75 0 0 1 .75-.75Z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </div>
+          <div class="dec">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="#ADB5BD"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="inc-dec-icon"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M5 12h14"
+              />
+            </svg>
+          </div>
+        </div>
+        <div class="input-box">
+          <label for="price">قیمت</label>
+          <input
+            type="number"
+            min="0"
+            id="price"
+            class="input"
+            placeholder="0"
+          />
+        </div>
+      </div>
+      <div class="flex flex-gap-4 form-inputs-item">
+        <div class="inc-dec">
+          <div class="inc">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              class="inc-dec-icon"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M12 3.75a.75.75 0 0 1 .75.75v6.75h6.75a.75.75 0 0 1 0 1.5h-6.75v6.75a.75.75 0 0 1-1.5 0v-6.75H4.5a.75.75 0 0 1 0-1.5h6.75V4.5a.75.75 0 0 1 .75-.75Z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </div>
+          <div class="dec">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="#ADB5BD"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="inc-dec-icon"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M5 12h14"
+              />
+            </svg>
+          </div>
+        </div>
+        <div class="input-box">
+          <label for="count">تعداد</label>
+          <input
+            type="number"
+            id="count"
+            min="0"
+            class="input"
+            placeholder="0"
+          />
+        </div>
+      </div>
+      <div class="flex flex-gap-4 form-inputs-item total-price-box">
+        <div class="input-box input-total-price">
+          <label for="total-price">مبلغ کل</label>
+          <input
+            type="number"
+            id="total-price"
+            min="0"
+            class="input"
+            placeholder="0"
+            readonly
+          />
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-gap-8 buttons form-buttons">
+      <button
+        type="button"
+        class="btn-c btn-cancle"
+        (click)="closeBottomSheet()"
+      >
+        بستن
+      </button>
+      <button
+        type="submit"
+        class="btn-c"
+        [ngClass]="{
+          'btn-buy-fill': orderType === 'buy',
+          'btn-sell-fill': orderType === 'sell'
+        }"
+      >
+        ارسال
+      </button>
+    </div>
+  </form>
+</div>

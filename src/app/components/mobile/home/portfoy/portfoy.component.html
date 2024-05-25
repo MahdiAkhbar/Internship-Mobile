@@ -1,0 +1,68 @@
+<div class="portfoy">
+  <table>
+    <thead class="table-head light-text">
+      <tr>
+        <th class="table-head-item">
+          <div class="table-head-item-text">
+            <p class="name">نماد</p>
+            <p class="count">تعداد</p>
+          </div>
+        </th>
+        <th class="table-head-item">
+          <div class="table-head-item-text">
+            <p class="last-price">آخرین قیمت</p>
+            <p class="profit-or-loss">سود یا زیان ٪</p>
+          </div>
+        </th>
+        <th class="table-head-item">
+          <div class="table-head-item-text">
+            <p class="finish-price">قیمت پایانی</p>
+            <p class="change">تغییر ٪</p>
+          </div>
+        </th>
+        <th class="table-head-item">
+          <div class="table-head-item-text">
+            <p class="current-value">ارزش فعلی</p>
+          </div>
+        </th>
+      </tr>
+    </thead>
+    <tbody class="table-body">
+      @for (row of portfoy; track row) {
+      <tr class="table-data-row">
+        <td class="text-center flex align-center flex-gap-8">
+          <div class="green-box"></div>
+          <div class="flex flex-column flex-gap-4">
+            <p>{{ row.name }}</p>
+            <p class="light-text">{{ row.count }}</p>
+          </div>
+        </td>
+        <td class="text-center">
+          <p>{{ row.lastPrice }}</p>
+          <p
+            [ngClass]="{
+              'change-lastPrice-green': row.profitOrLoss > 0,
+              'change-lastPrice-red': row.profitOrLoss < 0
+            }"
+          >
+            {{ row.profitOrLoss }}
+          </p>
+        </td>
+        <td class="text-center">
+          <p>{{ row.finishPrice }}</p>
+          <p
+            class="change-finishPrice"
+            [ngClass]="{
+              'change-bg-green': row.change.value > 0,
+              'change-bg-red': row.change.value < 0
+            }"
+          >
+            {{ row.change.viewValue }}
+          </p>
+        </td>
+        <td class="text-center">{{ row.currentValue }}</td>
+      </tr>
+      }
+    </tbody>
+  </table>
+</div>

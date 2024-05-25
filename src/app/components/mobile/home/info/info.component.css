@@ -1,0 +1,53 @@
+.search-box {
+    gap: 4px;
+}
+
+.search-input-box {
+    flex-basis: 100%;
+    padding: .8rem 1.2rem;
+    position: relative;
+}
+
+.search-input {
+    outline: none;
+    border: none;
+    width: 100%;
+}
+
+.search-result {
+    background-color: #fff;
+    font-size: 1.4rem;
+    position: absolute;
+    top: 110%;
+    right: 0;
+    width: 100%;
+    max-height: 200px;
+    overflow: auto;
+}
+
+.search-result-item {
+    padding: .8rem .4rem;
+}
+
+.price {
+    font-weight: 500;
+}
+
+.date-box p {
+    font-size: 1.2rem;
+}
+
+.info-box {
+    column-gap: 4px;
+}
+
+.bg-gray {
+    background-color: #F1F3F5;
+}
+
+.info-items {
+    border: none;
+    border-radius: 4px;
+    padding: .8rem 1.2rem;
+    font-size: 1.2rem;
+}
