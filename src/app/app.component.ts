@@ -22,6 +22,6 @@ export class AppComponent implements OnInit {
     });
     this.userDeviceType = this.userAgentService.getDeviceType();
     if (this.userDeviceType === 'Desktop')
-      window.location.href = 'http://localhost:3000/d';
+      window.location.href = 'http://192.168.130.176:4200/d';
   }
 }

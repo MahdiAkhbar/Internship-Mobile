@@ -22,6 +22,7 @@ p {
 .title-text {
     font-size: 3.2rem;
     font-weight: 600;
+    color: #444;
 }
 
 .login-header p {
