@@ -16,3 +16,16 @@ button {
 .logo {
     font-size: 2rem;
 }
+
+.time-container {
+    color: #fff;
+    font-size: 1.4rem;
+    align-content: center;
+    text-align: end;
+    padding: 0 .8rem;
+}
+
+.time-icons {
+    width: 1.8rem;
+    height: 1.8rem;
+}
