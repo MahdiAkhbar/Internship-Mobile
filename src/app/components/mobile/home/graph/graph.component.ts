@@ -45,15 +45,7 @@ export class GraphComponent implements OnInit {
   sellectedGraphDuration: string = this.graphDuration[0].value;
   sellectedGraphTimeframe: string = this.graphTimeframe[0].value;
 
-  @ViewChild('chart', { static: true }) chart!: ChartComponent;
-  // public chartOptions!: Partial<ChartOptions>;
-  public chartOptions: ChartOptions = {
-    series: [],
-    chart: {
-      type: 'line'
-    },
-    xaxis: {}
-  };
+  public chartOptions!: ChartOptions;
 
   ngOnInit(): void {
     this.stockService.insCode.pipe(
@@ -62,8 +54,8 @@ export class GraphComponent implements OnInit {
         mergeMap(() => this.stockService.getChartInfo(ins))
       ))
     ).subscribe(res => {
-      let data: number[] = [];
-      let axis: Date[] = [];
+      // let data: number[] = [];
+      let data: { x: number, y: number }[] = [];
       res.forEach(item => {
         let time = item.eventClock;
         let s = time % 100;
@@ -75,20 +67,25 @@ export class GraphComponent implements OnInit {
         date.setHours(h);
         date.setMinutes(m);
         date.setSeconds(s);
-        data.push(item.closePrice);
-        axis.push(date);
+        data.push({
+          x: date.getTime(),
+          y: item.closePrice
+        });
       });
+
       this.chartOptions = {
-        series: [
-          {
-            data: data
+        series: [{
+          name: 'آخرین: ',
+          data: data
+        }],
+        xaxis: {
+          type: 'datetime',
+          labels: {
+            format: 'HH:mm'
           }
-        ],
+        },
         chart: {
           type: 'line'
-        },
-        xaxis: {
-          categories: axis
         }
       }
     });
