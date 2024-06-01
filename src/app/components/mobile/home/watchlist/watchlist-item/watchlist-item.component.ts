@@ -28,10 +28,10 @@ export class WatchlistItemComponent implements OnInit {
     };
 
   ngOnInit(): void {
-    this.stockService.getStockInfo(this.item.insCode).pipe(
+    this.stockService.getLastTrade(this.item.insCode).pipe(
       take(1)
     ).subscribe(res => {
-      let value = (res.closePrice - res.firstPrice) * 100 / res.firstPrice;
+      let value = (res.closePrice - res.priceYesterday) * 100 / res.priceYesterday;
       let viewValue = Math.abs(value).toFixed(2);
       this.changePercentage = {
         value: value,
