@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
-import { BehaviorSubject, catchError, take, tap, throwError } from 'rxjs';
+import { BehaviorSubject, catchError, Subject, take, tap, throwError } from 'rxjs';
 
 import { ILogin } from '../interfaces/loginform.interface';
 import { ISignup } from '../interfaces/signupform.interface';
@@ -20,9 +20,13 @@ export class AuthService {
     private userAgentService: UserAgentService,
     @Inject('API_URL') private apiUrl: string,
     @Inject('GLOBAL_TOKEN') private gToken: string
-  ) { }
+  ) {
+    this.isLoggedin.subscribe(res => {
+      this.isLoggedinState = res;
+    })
+  }
 
-  isLoggedin: BehaviorSubject<boolean> = new BehaviorSubject(false);
+  isLoggedin: Subject<boolean> = new Subject();
   isLoggedinState: boolean = false;
 
   getLoggedInState() {
@@ -66,13 +70,7 @@ export class AuthService {
     localStorage.removeItem('user');
     localStorage.removeItem('ins-code');
     this.isLoggedin.next(false);
-    let userAgent = this.userAgentService.getDeviceType();
-    if (userAgent === 'Desktop') {
-      this.router.navigate(['/d/login']);
-    }
-    else
-      this.router.navigate(['/m/login']);
-
+    // this.router.navigate(['/d/login']);
   }
 
   private handleError(err: any) {
