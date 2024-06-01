@@ -1,7 +1,13 @@
 <tr class="table-data-row" [ngClass]="{ 'bg-gray': index % 2 == 0 }">
   <td class="table-data">
     <div class="watchlist-item-name flex flex-gap-8 h-100 align-center">
-      <div class="green-box"></div>
+      <div
+        class="flex-shrink-0"
+        [ngClass]="{
+          'green-box': !!item.valid,
+          'red-box': !!!item.valid
+        }"
+      ></div>
       <div class="text-end">
         <p>{{ item.symbol }}</p>
       </div>
