@@ -67,6 +67,7 @@
 
 .volume-text {
     text-align: end;
+    padding-left: 8px;
 }
 
 .table-data-row:hover {
