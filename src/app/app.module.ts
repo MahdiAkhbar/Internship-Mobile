@@ -34,6 +34,7 @@ import { AuthInterceptor } from './shared/services/auth-interceptor.service';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { RouterOutlet } from '@angular/router';
 import { HomeComponent } from './components/mobile/home/home.component';
+import { SearchPipe } from './shared/pipes/search.pipe';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { HomeComponent } from './components/mobile/home/home.component';
     WatchlistItemComponent,
     BottomSheetComponent,
     NavbarComponent,
-    HomeComponent
+    HomeComponent,
+    SearchPipe
   ],
   imports: [
     BrowserModule,

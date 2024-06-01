@@ -224,7 +224,7 @@
       <tbody class="table-body">
         <app-watchlist-item
           class="table-data-row"
-          *ngFor="let item of watchList; let i = index"
+          *ngFor="let item of watchList | search : searchInput; let i = index"
           [watchList]="item"
           [index]="i"
           (click)="onWatchListItemClicked(item.insCode)"
